@@ -1,0 +1,7 @@
+@use '../App/mixin.scss';
+
+@include mixin.largeTablet {
+ .buttonToggle{
+    display: block;
+ }
+}
