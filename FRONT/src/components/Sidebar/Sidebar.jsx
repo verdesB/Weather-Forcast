@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft, faHome, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faHome, faCircleInfo, faMagnifyingGlass, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './sidebar.scss'
 
 const Sidebar = ({isOpen, toggleOpen}) => {
@@ -21,10 +21,19 @@ const Sidebar = ({isOpen, toggleOpen}) => {
           
           <FontAwesomeIcon className="block w-4 py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700  hover:text-white" icon={faHome} />
         </Link>
-        <Link to="/about" className="flex flex-row justify-between ">
+        <Link to="/" className="flex flex-row justify-between ">
+          <p className="py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white">Rechercher</p>
+          <FontAwesomeIcon className="block w-4 py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white" icon={faMagnifyingGlass} />
+        </Link>
+        <Link to="/" className="flex flex-row justify-between ">
+          <p className="py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white">Mes Favoris</p>
+          <FontAwesomeIcon className="block w-4 py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white" icon={faHeart} />
+        </Link>
+        <Link to="/" className="flex flex-row justify-between ">
           <p className="py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white">À propos</p>
           <FontAwesomeIcon className="block w-4 py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white" icon={faCircleInfo} />
         </Link>
+        
       </nav>
     </div>
   );
