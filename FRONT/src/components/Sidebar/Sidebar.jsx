@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft, faHome, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({isOpen, toggleOpen}) => {
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`w-64 h-full bg-gray-200 bg-opacity-50 shadow-md text-white transition-all duration-200 transform ${isOpen ? 'translate-x-0' : 'translate-x-[calc(-100%+3rem)]'}`}>
+    <div className={`absolute overflow-auto z-10 w-64 h-full bg-gray-200 bg-opacity-50 shadow-md text-white transition-all duration-200 transform ${isOpen ? 'translate-x-0' : 'translate-x-[calc(-100%+3rem)]'}`}>
       <div className="flex flex-row justify-end">
-      <button className="block py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white" onClick={() => setIsOpen(!isOpen)}>
+      <button  className="block py-2.5 px-4 rounded transition duration-200 text-blue-500 hover:bg-blue-700 hover:text-white" onClick={toggleOpen} >
   {isOpen ? <FontAwesomeIcon icon={faArrowLeft} /> : <FontAwesomeIcon icon={faArrowRight} />}
   {/* {isOpen ? 'Fermer' : 'Ouvrir'} */}
 </button>
